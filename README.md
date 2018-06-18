@@ -1,6 +1,6 @@
 Instrucciones para ejecutar la aplicación
 
-	Para el correcto funcionamiento de la aplicación, es necesario:
+Para el correcto funcionamiento de la aplicación, es necesario:
 		-Servidor Windows o Máquina virtual windows o PC con windows.
 		-SQL server configurado en el puerto de serie
 		-Crendenciales SQL:
@@ -61,11 +61,17 @@ Problemas:
 Cosas que mejoraría con tiempo:
 
 En el apartado de test, solo he añadido los pocos que me dio tiempo. Hay 2 proyectos de test, uno para cada proyecto web.
+
 Mensajes en el Front, ser preciso en el tipo de error (el elemento no existe, el usuario no existe, contraseña incorrecta ...etc), también requiere una mejora en las respuestas de la Api.
+
 El control del Login, sesión y seguridad, mencionado anteriormente
+
 Mejorar notificaciones, como mínimo poner un servidor smtp si se quiere Email, y yo añadiría cualquier aplicación que el cliente ya utilice (si quiere) como Telegram, Slack, Jira… etc.
+
 Cambiar las rutas http del código (como los localhost:1414) a web.config por ejemplo
+
 Mover todo el css y js que quede en las vistas los ficheros css y js correspondientes.
+
 Añadir ajax para una mejor experiencia del usuario.
 
 
