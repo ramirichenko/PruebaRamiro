@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@{
+    if (ViewBag.Error != null)
+    {
+        <script>
+            M.toast({ html: 'Error al retirar elemento del inventario.', classes: 'rounded red' });
+        </script>
+    }
+    else if (ViewBag.Success != null && ViewBag.Success)
+    {
+        <script>
+            ///var itemName = @ViewBag.itemName;
+            //M.toast({ html: 'Elemento: ' + itemName + ' ha sido retirado del inventario.', classes: 'rounded blue' });
+            M.toast({ html: 'El elemento ha sido retirado del inventario.', classes: 'rounded green' });
+
+        </script>
+    }
+}
+
+<center>
+    <div class="section"></div>
+    <h5>Retirar elemento del inventario</h5>
+    <div class="container">
+
+
+        <form class="col s12 center-align" action="OutputRequest" method="post" id="outputForm" style="padding-top:15px;">
+            <div class="row">
+                <div class="input-field col s12">
+                    <input required placeholder="Nombre" id="itemName" name="itemName" type="text" class="validate">
+                </div>
+            </div>
+
+
+            <button class="btn waves-effect waves-light appbtn" type="submit" name="action">
+                <i class="material-icons left">import_export</i>
+                Retirar
+            </button>
+
+
+        </form>
+    </div>
+</center>
+
+

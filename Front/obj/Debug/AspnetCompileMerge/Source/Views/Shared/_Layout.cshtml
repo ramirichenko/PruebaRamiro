@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/materialize")
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+
+    <nav style="background-color:#55778F;">
+        <div class="nav-wrapper">           
+                @Html.ActionLink("Salir", "Logout", "Login", new object { }, new { @class = "right" ,@style = "padding-right : 10px;" })
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                <li>@Html.ActionLink("Insertar producto", "RegisterForm", "InventoryItem")</li>
+                <li>@Html.ActionLink("Retirar producto", "OutputForm", "InventoryItem")</li>
+                <li>@Html.ActionLink("Listar ", "ListItems", "InventoryItem")</li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+
+
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+    <script>
+        const Calendar = document.querySelector('.datepicker');
+        M.Datepicker.init(Calendar, {});
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@{
+    if (ViewBag.Error != null)
+    {
+        <script>
+            M.toast({ html: 'Error al insertar elemento en el inventario.', classes: 'rounded red' });
+        </script>
+    }
+    else if (ViewBag.Success != null && ViewBag.Success)
+    {
+        <script>
+            //var itemName = @ViewBag.itemName;
+            M.toast({ html: 'EL elemento ha sido inventariado.', classes: 'rounded green' });
+        </script>
+    }
+}
+
+
+<center>
+    <div class="section"></div>
+    <h5>Registar elemento en inventario</h5>
+    <div class="container">
+
+
+        <form class="col s12 center-align" action="RegisterRequest" method="post" style="padding-top:50px;">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input required placeholder="Nombre" id="itemName" name="itemName" type="text" class="validate">
+                </div>
+
+                <div class="input-field col s6">
+                    <input required placeholder="Tipo" id="itemType" name="itemType" type="text" class="validate">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <input required placeholder="Fecha de expiración" id="expirationDate" name="expirationDate" type="text" class="datepicker">
+                </div>
+            </div>
+
+
+            <button class="btn waves-effect waves-light appbtn" type="submit" name="action">
+                <i class="material-icons left">add</i>
+                Insertar
+            </button>
+
+
+        </form>
+
+    </div>
+</center>
+
+
+
+
+

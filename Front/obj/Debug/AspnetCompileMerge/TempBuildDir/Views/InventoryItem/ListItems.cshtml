@@ -1,0 +1,46 @@
+﻿@model List<PruebaGoalSystems2.Model.Models.InventoryItem>
+@{
+    /**/
+
+    ViewBag.Title = "Home Page";
+}
+
+
+@if (@Model == null || Model.Count <= 0)
+{
+    <center>
+        <div class="row centered">
+            <h5 class="centered"> No hay ningun elemento en el inventario</h5>
+        </div>
+    </center>
+}
+else
+{
+    <div class="row">
+        <table class="centered highlight responsive-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Register date</th>
+                    <th>Output date</th>
+                    <th>Expiration date</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.name</td>
+                        <td>@item.registrationDate.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                        <td>
+                            @if (@item.outputDate.HasValue)
+                            {@item.outputDate.Value.ToString("yyyy-MM-dd")}
+                        </td>
+                        <td>@item.expirationDate.Date.ToString("yyyy-MM-dd")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
